@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5//angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5//angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <title></title>
+</head>
+<!--show-->
+<body ng-app="viewApp"> <!-- thetta er bundid saman vid app filinn module -->
+<div  style="font-size: large">
+  <ul class="menu">
+    <li><a href="#/persons">All Persons</a></li>
+    <li><a href="#/person"></a>Persons</li>
+  </ul>
+  <div style="margin: 5px;border: solid #006666; min-width: 400px;min-height: 300px;">
+     <!--This is were templates will be inserted-->
+     <div ng-view="ng-view"></div> <!-- WITHOUT THIS NITHING IS VIEW'D here my templater are being inserted -->
+  </div>
+  <!--/show-->
+  
+</div>
+</body>
+<!--</html>-->
