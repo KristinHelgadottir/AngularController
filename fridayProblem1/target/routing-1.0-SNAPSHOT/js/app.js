@@ -1,24 +1,15 @@
-
 var app = angular.module('viewApp', ['ngRoute']); // injecting third party module: ng-route, remember to include of angular route
 // Route Provider Start
 app.config(function ($routeProvider) // injection of routprovider
 {
   $routeProvider
-    .when("/home", {
-      templateUrl: "views/home.html",
-      controller: "HomeController"
-    })
     .when("/persons", {
       templateUrl: "views/persons.html",
       controller: "PersonController"
     })
-    .when("/company", {
-      template: "<h2 style='margin:20px;'>General Info about the Company</h2>",
-      controller: "CompanyController"
-    })
-    .when("/blog", {
-      template: "<h2 style='margin:20px;'>Our great Company Blog</h2>"
-      //controller: "BlogController"
+     .when("/newPersons", {
+      templateUrl: "views/persons.html",
+      controller: "PersonController"
     })
     .when("/info/:index", {
       templateUrl: "views/bookdetail.html",
@@ -30,18 +21,6 @@ app.config(function ($routeProvider) // injection of routprovider
 })
 // Route Provider End
 
-// Controllers Start
-app.controller("HomeController",function($scope){
-  $scope.home = "Home View for this site";
-})
-
-app.controller("CompanyController",function($scope){
-  $scope.Company = "General info about the company";
-})
-
-app.controller("BlogController",function($scope){
-  $scope.blog = "Blog for this site";
-})
 
 
 app.factory("personList",function()
@@ -58,10 +37,10 @@ app.factory("personList",function()
   };
 });
 
-app.controller('PersonController', function ($scope, $routeParams,personList) {
+app.controller('PersonController', function ($scope, $routeParams, personList) {
   $scope.persons = "Persons";
   $scope.persons = personList.getAll();
-  personList.addPerson({id: "xxx", info: "Study hard"});
+  personList.addPerson({id: "xxx", name: "Haraldur"});
 
   if (angular.isDefined($routeParams.index)) {
     var i = $routeParams.index;
