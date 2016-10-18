@@ -3,10 +3,10 @@
   <h2 style="color:darkblue;">{{persons}}</h2>
   
   <h3>A list of all persons</h3>
+  
   <ul style="list-style-type: none">
-      
-    <li ng-repeat="person in persons">
-      <div>{{person.name}} <a href="#/person/{{$index}}">Details</a></div>
-    </li>
+      <li ng-repeat="person in persons">
+        <div>{{person.name}} <a href="#/info/{{$index}}">Details about this person</a></div>
+     </li>
   </ul>
 </div>
