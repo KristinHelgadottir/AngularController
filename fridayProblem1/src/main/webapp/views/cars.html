@@ -1,0 +1,17 @@
+ <div style="margin: 10px;"> 
+     <h2 style="color:darkblue;">{{cars.brand}}</h2>
+
+     <h3> A list of all cars </h3>
+     
+     <ul style="list-style-type: none">
+        <li ng-repeat="car in cars">
+            <div>{{car.brand}}
+                <a href="#/brand/{{$index}}">Details</a>
+            </div>
+        </li>
+    </ul>
+
+ <a href="#/home">Back</a>
+ 
+ </div>
+      
