@@ -1,0 +1,9 @@
+<form class="well" style="font-size: small">
+    <label>Name</label>
+    <input type="text" name="name" ng-model=""/>
+    <label>Age</label>
+    <input type="text" name="email" ng-model=""/>
+    <br/>
+    <input type="hidden" ng-model="$scope.newbee.id" />
+    <input type="button" value="Save" ng-submit="save()" ng-click="$scope.save()" class="btn btn-primary"/>
+  </form>

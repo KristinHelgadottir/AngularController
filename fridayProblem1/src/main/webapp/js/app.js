@@ -8,6 +8,11 @@ app.config(function ($routeProvider) // injection of routprovider
       templateUrl: "views/home.html",
       controller: "HomeController"
     })
+    .when("/newPerson",
+    {
+       templateUrl: "views/newPerson.html",
+       controller: "PersonController"
+    })
     .when("/persons", 
     {
       templateUrl: "views/persons.html",
@@ -60,17 +65,37 @@ app.controller("CarController", function($scope, $routeParams)
 
 app.controller("PersonController", function($scope, $routeParams)
 {
-   $scope.persons = "Our Persons";
-   $scope.persons = 
+   var uId = 1;
+    $scope.persons = "Our Persons";
+    $scope.persons = 
     [
-        {id: 1, name: "Jonas", age: 21},
-        {id: 2, name: "Angeline", age: 15},
-        {id: 3, name: "Moe", age: 54}
+        {id: 2, name: "Jonas", age: 21},
+        {id: 3, name: "Angeline", age: 15},
+        {id: 4, name: "Moe", age: 54}
     ];
     
     if (angular.isDefined($routeParams.index)) 
     {
       var i = $routeParams.index;
       $scope.person = $scope.persons[i];
+    }
+    
+    $scope.save = function()
+    {
+        if ($scope.newbee.id == null)
+        {
+            $scope.newbee.id = uId++;
+            $scope.persons.push($scope.newbee);
+        }else
+        {
+            for (var i in $scope.persons)
+            {
+                if ($scope.persons[i].id == $scope.newbee.id)
+                {
+                    $scope.persons[i] = $scope.newbee;
+                }
+            }
+        }
+        $scope.newbee = {};
     }
 });

@@ -12,14 +12,15 @@
 
 <body ng-app="viewApp"> <!-- thetta er bundid saman vid app filinn module -->
     <div  style="font-size: large">
-      <ul class="menu">
+      <ul class="menu" style="margin: 10px">
           <li style="align-content: space-between">
             <a href="#/persons">Persons</a>
             <a href="#/home">Home</a>
             <a href="#/cars">Cars</a>
+            <a href="#/newPerson">New person</a>
         </li>
       </ul>
-      <div style="margin: 5px; border: 10px solid #00B7FF; min-width: 400px; min-height: 300px;">
+      <div style="margin: 5px; border: 8px solid #00B7FF; min-width: 400px; min-height: 300px;">
          <!--This is were templates will be inserted-->
          <div ng-view="ng-view"><!-- WITHOUT THIS NITHING IS VIEW'D here my templater are being inserted --></div> 
       </div>
